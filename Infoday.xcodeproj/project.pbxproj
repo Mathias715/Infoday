@@ -19,6 +19,7 @@
 		91E36CAA28C84AA900B1F19B /* DeptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E36CA928C84AA900B1F19B /* DeptView.swift */; };
 		91E36CAC28C84C2D00B1F19B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E36CAB28C84C2D00B1F19B /* SwiftUIView.swift */; };
 		91E36CAE28C84C4C00B1F19B /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E36CAD28C84C4C00B1F19B /* EventView.swift */; };
+		91E599EB28D17C31008CE471 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E599EA28D17C31008CE471 /* NewsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		91E36CA928C84AA900B1F19B /* DeptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeptView.swift; sourceTree = "<group>"; };
 		91E36CAB28C84C2D00B1F19B /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		91E36CAD28C84C4C00B1F19B /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		91E599EA28D17C31008CE471 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				91E36CAB28C84C2D00B1F19B /* SwiftUIView.swift */,
 				91E36CA928C84AA900B1F19B /* DeptView.swift */,
 				91E36CAD28C84C4C00B1F19B /* EventView.swift */,
+				91E599EA28D17C31008CE471 /* NewsView.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91E36CA628C83B2300B1F19B /* InfoView.swift in Sources */,
+				91E599EB28D17C31008CE471 /* NewsView.swift in Sources */,
 				91E36CAE28C84C4C00B1F19B /* EventView.swift in Sources */,
 				91E36CAA28C84AA900B1F19B /* DeptView.swift in Sources */,
 				91E36CAC28C84C2D00B1F19B /* SwiftUIView.swift in Sources */,

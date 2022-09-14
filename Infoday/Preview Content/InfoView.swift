@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct InfoView: View {
+    
+    @AppStorage("darkMode") var darkMode: Bool = false
+    
     var body: some View {
         VStack{
             Image("hkbu_logo")
@@ -23,13 +26,21 @@ struct InfoView: View {
                             Image(systemName: "phone.fill.arrow.up.right")
                             Text(contact.office)
                             Spacer()
-                            Text(contact.tel)
+                            // Text(contact.tel)
+                            Link(contact.tel, destination: URL(string: "tel:\(contact.tel)")!)
                 } }
                 }
-                            Section(header: Text("Settings")) {
-                                Text("Dark Mode")
-                                Text("Light Mode")
-                            }
+                Section(header: Text("Settings")) {
+//                    Text("Dark Mode")
+//                        .onTapGesture {
+//                            darkMode = true
+//                        }
+//                    Text("Light Mode")
+//                        .onTapGesture {
+//                            darkMode = false
+//                        }
+                    Toggle("Dark Mode", isOn: $darkMode)
+                }
             }
                         .padding(.top, 32.0)
                     }

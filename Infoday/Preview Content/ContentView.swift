@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("darkMode") var darkMode: Bool = false
     var body: some View {
         TabView {
+            NewsView().tabItem {
+                Image(systemName: "newspaper.fill")
+                Text("News")
+            }
             DeptView().tabItem {
                 Image(systemName: "calendar.circle.fill")
                 Text("Events")
@@ -24,6 +29,7 @@ struct ContentView: View {
 }
                 
             }
+        .preferredColorScheme(darkMode ? .dark : .light)
         }
 }
 struct ContentView_Previews: PreviewProvider {

@@ -20,15 +20,43 @@ struct MapView: View {
         )
     )
     var body: some View {
-        Map(coordinateRegion: $region,
-        annotationItems: Building.campusBuildings) {
-        building in
-            MapMarker(coordinate:
-        building.coordinate)
+//        Map(coordinateRegion: $region,
+//        annotationItems: Building.campusBuildings) {
+//        building in
+        //MapMarker(coordinate: building.coordinate)
+
+//        }
+//        .edgesIgnoringSafeArea(.top) // show the edge of the region
+//}
+//
+        ZStack(alignment:.bottom){
+            Map(coordinateRegion: $region, annotationItems: Building.campusBuildings) { building in
+                MapAnnotation(coordinate: building.coordinate) {
+                    
+                    Image(systemName: "mappin.circle.fill")
+                        .resizable()
+                        .frame(width: 30.0, height: 30.0)
+                        .foregroundColor(Color(.systemRed))
+                    Text(building.title)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: 150)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            .edgesIgnoringSafeArea(.top)
+            
+            Button("Reset") {
+                withAnimation {
+                    region.center = CLLocationCoordinate2D(
+                        latitude: 22.33787,
+                        longitude: 114.18131
+                    )
+                }
+            }
+            .padding()
         }
-        .edgesIgnoringSafeArea(.top) // show the edge of the region
-}
-    
+    }
+        
 }
 
 struct MapView_Previews: PreviewProvider {
