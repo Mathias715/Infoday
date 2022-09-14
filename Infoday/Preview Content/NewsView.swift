@@ -60,19 +60,19 @@ extension NewsView {
             if let error = error {
                 self.handleClientError(error)
                 return
-            }
+            } // explenation Powerpoint lecture 2
             
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 self.handleServerError(response)
                 return
-            }
+            } // explenation Powerpoint lecture 2
             
-//            if let data = data,
-//               let string = String(data: data, encoding: .utf8) {
-//
-//                self.news = [News(id: 0, title: string, detail: "", image: "")]
-//            }
+            //            if let data = data,
+            //               let string = String(data: data, encoding: .utf8) {
+            //
+            //                self.news = [News(id: 0, title: string, detail: "", image: "")]
+            //            }
             if let data = data, let news = try? JSONDecoder().decode([News].self, from: data) {
                 
                 self.news = news
