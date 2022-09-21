@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct InfoView: View {
-    
+    @State var comment: String = ""
+    @State var alertTitle: String = ""
+    @State var showAlert: Bool = false
     @AppStorage("darkMode") var darkMode: Bool = false
     
     var body: some View {
@@ -30,6 +32,18 @@ struct InfoView: View {
                             Link(contact.tel, destination: URL(string: "tel:\(contact.tel)")!)
                 } }
                 }
+                Section(header: Text("Feedbacks")) {
+                    TextField(
+                        "Comments",
+                        text: $comment
+                    )
+                    Button("Submit", action: {
+                        submit()
+                    })
+                    .alert(alertTitle, isPresented: $showAlert, actions: {
+                        Button("OK") {}
+                    })
+                }
                 Section(header: Text("Settings")) {
 //                    Text("Dark Mode")
 //                        .onTapGesture {
@@ -47,6 +61,7 @@ struct InfoView: View {
                     .padding(.top, 32.0)
                 }
             }
+
         
 
 struct InfoView_Previews: PreviewProvider {
@@ -67,3 +82,46 @@ extension Contact {
         Contact(office: "Emergencies", tel: "3411-7777"),
         Contact(office: "Health Services Center", tel: "3411-7447")
 ] }
+
+extension InfoView {
+    func handleClientError(_: Error) {
+        return
+    }
+    
+    func handleServerError(_: URLResponse?) {
+        return
+    }
+    
+    func submit() {
+        
+        let endpoint = URL(string: "https://httpbin.org/post")!
+        
+        var request = URLRequest(url: endpoint)
+        request.httpMethod = "POST"
+        let postString = "Comment=\(comment)"
+        request.httpBody = postString.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let error = error {
+                self.handleClientError(error)
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                self.handleServerError(response)
+                return
+            }
+            
+            if let data = data,
+               let string = String(data: data, encoding: .utf8) {
+                showAlert = true
+                alertTitle = string
+            }
+           
+        }
+        
+        task.resume()
+    }
+}

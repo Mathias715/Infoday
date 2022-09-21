@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		915D410528DAA4E800C83094 /* InfoDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 915D410328DAA4E800C83094 /* InfoDay.xcdatamodeld */; };
+		915D410828DAA5F100C83094 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D410628DAA5F100C83094 /* Event+CoreDataClass.swift */; };
+		915D410B28DAA70800C83094 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D410A28DAA70800C83094 /* Persistence.swift */; };
+		915D410F28DAB2AF00C83094 /* ItinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D410E28DAB2AF00C83094 /* ItinView.swift */; };
 		91E36C7A28C8338600B1F19B /* InfodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E36C7928C8338600B1F19B /* InfodayApp.swift */; };
 		91E36C7C28C8338600B1F19B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E36C7B28C8338600B1F19B /* ContentView.swift */; };
 		91E36C7E28C8338900B1F19B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E36C7D28C8338900B1F19B /* Assets.xcassets */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		915D410428DAA4E800C83094 /* InfoDay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InfoDay.xcdatamodel; sourceTree = "<group>"; };
+		915D410628DAA5F100C83094 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		915D410A28DAA70800C83094 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		915D410E28DAB2AF00C83094 /* ItinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItinView.swift; sourceTree = "<group>"; };
 		91E36C7628C8338600B1F19B /* Infoday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Infoday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E36C7928C8338600B1F19B /* InfodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfodayApp.swift; sourceTree = "<group>"; };
 		91E36C7B28C8338600B1F19B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +94,7 @@
 		91E36C6D28C8338600B1F19B = {
 			isa = PBXGroup;
 			children = (
+				915D410628DAA5F100C83094 /* Event+CoreDataClass.swift */,
 				91E36C7828C8338600B1F19B /* Infoday */,
 				91E36C8928C8338900B1F19B /* InfodayTests */,
 				91E36C9328C8338900B1F19B /* InfodayUITests */,
@@ -108,6 +117,8 @@
 			children = (
 				91E36C7D28C8338900B1F19B /* Assets.xcassets */,
 				91E36C7F28C8338900B1F19B /* Preview Content */,
+				915D410328DAA4E800C83094 /* InfoDay.xcdatamodeld */,
+				915D410A28DAA70800C83094 /* Persistence.swift */,
 			);
 			path = Infoday;
 			sourceTree = "<group>";
@@ -124,6 +135,7 @@
 				91E36CA928C84AA900B1F19B /* DeptView.swift */,
 				91E36CAD28C84C4C00B1F19B /* EventView.swift */,
 				91E599EA28D17C31008CE471 /* NewsView.swift */,
+				915D410E28DAB2AF00C83094 /* ItinView.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -275,14 +287,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				915D410B28DAA70800C83094 /* Persistence.swift in Sources */,
 				91E36CA628C83B2300B1F19B /* InfoView.swift in Sources */,
 				91E599EB28D17C31008CE471 /* NewsView.swift in Sources */,
+				915D410828DAA5F100C83094 /* Event+CoreDataClass.swift in Sources */,
+				915D410F28DAB2AF00C83094 /* ItinView.swift in Sources */,
 				91E36CAE28C84C4C00B1F19B /* EventView.swift in Sources */,
 				91E36CAA28C84AA900B1F19B /* DeptView.swift in Sources */,
 				91E36CAC28C84C2D00B1F19B /* SwiftUIView.swift in Sources */,
 				91E36CA828C844CA00B1F19B /* Mapview.swift in Sources */,
 				91E36C7C28C8338600B1F19B /* ContentView.swift in Sources */,
 				91E36C7A28C8338600B1F19B /* InfodayApp.swift in Sources */,
+				915D410528DAA4E800C83094 /* InfoDay.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +617,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		915D410328DAA4E800C83094 /* InfoDay.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				915D410428DAA4E800C83094 /* InfoDay.xcdatamodel */,
+			);
+			currentVersion = 915D410428DAA4E800C83094 /* InfoDay.xcdatamodel */;
+			path = InfoDay.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 91E36C6E28C8338600B1F19B /* Project object */;
 }

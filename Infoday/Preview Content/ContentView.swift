@@ -27,6 +27,10 @@ struct ContentView: View {
                 Image(systemName: "info.circle.fill")
                     Text("Info")
 }
+            ItinView().tabItem {
+                Image(systemName: "calendar.circle.fill")
+                    Text("My itinary")
+}
                 
             }
         .preferredColorScheme(darkMode ? .dark : .light)
@@ -35,6 +39,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
 
